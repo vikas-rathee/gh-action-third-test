@@ -1,0 +1,10 @@
+name: Issues Workflow
+on:
+  issues:
+    types: [opened, edited, milestoned]
+jobs:
+  print_event_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print event info
+        run: echo "${{ toJSON(github.event) }}"
